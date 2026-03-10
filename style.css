@@ -1,0 +1,47 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    header {
+        height: auto; 
+    }
+    
+    header nav {
+        flex-direction: column; /* Apila enlaces en vertical */
+        gap: 10px;
+        font-size: 1.1rem;
+    }
+    
+    h1 {
+        font-size: 30px; /* Título principal más pequeño */
+    }
+    
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    .highlight, .fecha {
+        font-size: 16px; /* Texto más pequeño dentro de las cajas */
+        padding: 10px;
+    }
+
+    footer {
+        padding: 20px;
+        margin-top: 30px;
+    }
+}
