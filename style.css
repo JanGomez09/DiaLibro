@@ -2,8 +2,8 @@
 
 
 header {
-    height: 50%; 
-    background-color: black;
+    height: 60%; 
+    background-color: black; 
 }
 
 h1 {
@@ -12,9 +12,40 @@ h1 {
     text-align: center;
 }
 
+.p{
+
+}
+
+.log-container{
+
+}
+
+.log-container label{
+
+}
+
+.log-container input{
+
+}
+
+.log-container   {
+
+}
+
+
 
 body{
     background-color: white;
+}
+
+
+
+
+
+
+footer {
+    height: 60%; 
+    background-color: black;
 }
 
 
