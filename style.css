@@ -3,8 +3,10 @@
 
 
 
-
-
+.container {
+    width: 90%;
+    padding: 15px;
+}
 
 
 
@@ -32,7 +34,7 @@
     
     .container {
         width: 90%;
-        padding: 15px;
+        margin-left: 15px;
     }
     
     .highlight, .fecha {
