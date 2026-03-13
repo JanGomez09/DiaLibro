@@ -1,44 +1,24 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-
-const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID",
-    databaseURL: "https://operis-19016-default-rtdb.firebaseio.com"
-};
-
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
 
 
-window.activate = function(){
+let Cls1_free = false;
 
-    const name = document.getElementById("name").value;
-    const secc = document.getElementById("secc").value;
-    const roll = document.getElementById("roll").value;
-    const clas = document.getElementById("clas").value;
 
-    const userRef = ref(database, 'usuarios/' + name);
+function change(){
+    Cls1_free = true;
+    localStorage.setItem('Class 1', Cls1_free);
+   
 
-    set(userRef, {
-        nombre: name,
-        seccion: secc,
-        rol: roll,
-        clase: clas,
-        verified: true
-    })
+}
 
-    .then(() => {
-        console.log("Datos guardados correctamente");
-        alert("Datos enviados correctamente");
-    })
+if (Cls1_free) {
+    document.getElementById("check").textContent = "Disponible";
+    console.log(Cls1_free);
+} else {
+    document.getElementById("check").textContent = "Ocupada";  
+    console.log(Cls1_free);
+}
 
-    .catch((error) => {
-        console.error("Error:", error);
-    });
 
+function mainGO() {
+    location.href='main.html'
 }
