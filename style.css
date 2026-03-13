@@ -1,67 +1,97 @@
 body{
     margin:0;
-    background:#dcdcdc;
+    background:#ffffff;
     font-family:initial;
 }
 
-/* Barra superior */
+
+.main{
+    display:flex;
+    justify-content:center;
+    gap: 20%;
+    align-items:center;
+
+}
+
 header{
     background:black;
     color:white;
+    height: 125px;
     text-align:center;
-    padding:15px;
+   
 }
 
 footer {
     background:black;
     color:white;
     text-align:center;
-    padding:15px;
+    height: 125px;
 }
 
-/* Contenedor de los cuadros */
+
 .contenedor{
     display:flex;
     justify-content:center;
     gap:40px;
     margin-top:40px;
-    flex-wrap:wrap; /* evita que se rompa el diseño */
+    flex-wrap:wrap; 
+    
+    
 }
 
-/* Tarjetas */
 .cuadro{
-    background:#e6e6e6;
+    background:#ffffff;
     width:420px;
-    padding:30px;
+    padding:50px;
     border-radius:20px;
     box-shadow:0px 5px 10px rgba(0,0,0,0.3);
+    height: 250px;
+    
 }
 
-/* Campos */
+
 .campo{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    
     margin-bottom:25px;
 }
 
 input{
     width:180px;
-    padding:5px;
+    padding:10px;
+    border-radius: 15px;
+    border: none;
+    box-shadow:0px 5px 10px rgba(0,0,0,0.3);
 }
 
-/* Botón */
+
 .boton{
     text-align:center;
     margin-top:40px;
+    
 }
 
 button{
-    padding:10px 25px;
-    font-size:16px;
+    padding:14px 29px;
+    font-size: 1.3em;
+    background-color: white;
+    border: none;
+    box-shadow:0px 5px 10px rgba(0,0,0,0.3);
     cursor:pointer;
+    border-radius: 15px;
 }
 
+.main h1{
+    text-align: right;
+    font-size: 4em;
+}
+
+label{
+    text-align: left;
+    font-size: 1.3em;
+}
 
 
 /* ----------- RESPONSIVE ----------- */
