@@ -1,0 +1,244 @@
+/* ── Variables de color ── */
+:root {
+  --rojo:   #9b1a1a;
+  --crema:  #fdf6ec;
+  --blanco: #fff9f2;
+  --sombra: rgba(100, 20, 20, 0.14);
+  --texto:  #2a1a1a;
+  --gris:   #7a5a5a;
+  --linea:  rgba(155, 26, 26, 0.1);
+}
+
+/* ── Base ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--crema);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+/* ── Encabezado ── */
+.encabezado {
+  background: var(--rojo);
+  padding: 22px 32px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100vw;
+  margin-left: calc(-1 * ((100vw - 100%) / 2));
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.32);
+}
+
+.icono-libro {
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.icono-libro svg {
+  width: 100%;
+  height: 100%;
+}
+
+.titulo-encabezado {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  font-weight: 600;
+  font-style: italic;
+  color: #fff;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Contenido principal ── */
+.contenido {
+  padding: 0;
+}
+
+/* ── Título del menú ── */
+.titulo-grado {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 3vw, 1.15rem);
+  font-weight: 700;
+  color: var(--rojo);
+  letter-spacing: 0.04em;
+  padding: 28px 20px 10px;
+  border-bottom: 2px solid var(--linea);
+  margin: 0 14px 6px;
+}
+
+/* ── Lista de productos (una por fila) ── */
+.lista-clases {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 10px 16px 20px;
+}
+
+@media (min-width: 640px) {
+  .lista-clases {
+    gap: 16px;
+    padding: 12px 24px 24px;
+  }
+
+  .titulo-grado {
+    margin: 0 20px 6px;
+    padding: 32px 0 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contenido {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .lista-clases {
+    gap: 18px;
+    padding: 14px 28px 28px;
+  }
+}
+
+/* ── Tarjeta de producto ── */
+.clase {
+  background: var(--blanco);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 26px 28px;
+  box-shadow: 0 2px 10px var(--sombra), 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(155, 26, 26, 0.07);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  animation: aparecer 0.38s ease both;
+  min-height: 130px;
+}
+
+.clase:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 10px 24px var(--sombra), 0 2px 6px rgba(0, 0, 0, 0.07);
+}
+
+.clase:active {
+  transform: scale(0.985);
+}
+
+/* Animación de entrada escalonada */
+.lista-clases .clase:nth-child(1) { animation-delay: 0.04s; }
+.lista-clases .clase:nth-child(2) { animation-delay: 0.08s; }
+.lista-clases .clase:nth-child(3) { animation-delay: 0.12s; }
+.lista-clases .clase:nth-child(4) { animation-delay: 0.16s; }
+.lista-clases .clase:nth-child(5) { animation-delay: 0.20s; }
+.lista-clases .clase:nth-child(6) { animation-delay: 0.24s; }
+.lista-clases .clase:nth-child(7) { animation-delay: 0.28s; }
+.lista-clases .clase:nth-child(8) { animation-delay: 0.32s; }
+.lista-clases .clase:nth-child(9) { animation-delay: 0.36s; }
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Imagen / emoji del producto ── */
+.imagen-obra {
+  width: 100px;
+  height: 100px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  background: #faebd7;
+}
+
+.imagen-obra img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.emoji-comida {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.2rem;
+  background: #faebd7;
+}
+
+@media (min-width: 640px) {
+  .imagen-obra {
+    width: 110px;
+    height: 110px;
+  }
+
+  .emoji-comida {
+    font-size: 3.6rem;
+  }
+}
+
+/* ── Datos del producto ── */
+.datos-clase {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nombre-producto {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.15rem, 3vw, 1.4rem);
+  font-weight: 700;
+  color: var(--texto);
+  line-height: 1.3;
+}
+
+.ubicacion {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Botón rojo con el precio ── */
+.etiqueta-precio {
+  background: var(--rojo);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 6px 18px;
+  border-radius: 20px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* ── Pie de página ── */
+.pie {
+  text-align: center;
+  padding: 24px 0 36px;
+}
+
+.texto-pie {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gris);
+  opacity: 0.6;
+}
