@@ -16,7 +16,7 @@
   <div class="page">
 
     <header class="topbar">
-      <div class="book-icon">📖</div>
+      <button id="home" class="book-icon">📖</button>
       <h1>Día del Libro 2026</h1>
     </header>
 
@@ -140,7 +140,11 @@
 
         });
       });
+      const menu = document.getElementById("home");
+      menu.addEventListener('click', (e) => {
 
+        window.location.href = "clases.html";
+      });
 
 
     
