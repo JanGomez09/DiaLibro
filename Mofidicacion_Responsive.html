@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Día del Libro 2026 – Modificar Función</title>
+  <title>Día del Libro 2026</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -247,7 +247,7 @@
     // tiempo de clases
 window.toggleAndDisplayCls = async function () {
     const time = parseFloat(document.getElementById("time").value);
-    const resultado = time;
+    const resultado = time * 60;
 
     // Mapa de usuarios → clave
     const userMap = {
