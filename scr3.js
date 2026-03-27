@@ -8,7 +8,7 @@ const users = {
     cls5: "_pretzelpanke_7C_.",
     cls6: "_dragonsmovie_11D_.",
     //pabellon 2
-    cls19: "_glorianamepidioun67_10B_.",
+    cls19: "_gulpingforrest_10B_.",
     lab1: "_heracklesjobing_11A_.",
     lab4: "_movilizeddick_11B_.",
     lab5: "_carolinanortheste_7B_.",
@@ -22,7 +22,7 @@ const users = {
     cls13: "_sheromlelocksgood_9D_.",
     cls15: "_punzaderapunzel_8C_.",
     cls16: "_maltildadaslam_8B_.",
-    cls17: "_nicolasypablomatch_10C_.",
+    cls17: "_glorianamepidioun67_10C_.",
     cls18: "_spinosochos_7D_.",
     //area tecnica
     wsh1: "_aladdinmagicslamp_9A_.",

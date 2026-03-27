@@ -166,7 +166,7 @@
  
   <!-- HEADER -->
   <header>
-    <svg class="header-icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg  id="home" class="header-icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="42" height="42" rx="6" fill="#6a1010"/>
       <path d="M9 10 Q9 8 11 8 L20 8 L20 34 L11 34 Q9 34 9 32 Z" fill="#f5e6c8" opacity="0.9"/>
       <path d="M22 8 L31 8 Q33 8 33 10 L33 32 Q33 34 31 34 L22 34 Z" fill="#f5e6c8" opacity="0.9"/>
@@ -314,8 +314,13 @@ window.toggleAndDisplayCls = async function () {
     } catch (error) {
         
     }
+    
 };
+const menu = document.getElementById("home");
+      menu.addEventListener('click', (e) => {
 
+        window.location.href = "index.html";
+      });
     
 </script>
  
