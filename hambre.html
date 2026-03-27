@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Día del Libro 2026</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Srisakdi:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+
+    <header class="topbar">
+      <button id="home" class="book-icon">📖</button>
+      <h1>Día del Libro 2026</h1>
+    </header>
+
+    <section class="hero">
+      <div class="hero-container">
+        <img src="ChatGPT Image 27 mar 2026, 07_16_52 a.m..png" alt="Capitolio">
+      </div>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab active">INFORMACIÓN</button>
+    </nav>
+
+    <main class="content">
+      <p class="label">Día del Libro 2026</p>
+      <h2>Los Juegos del Hambre</h2>
+
+      <!-- 🔥 BOTONES NUEVOS -->
+      <div class="status-buttons">
+        <p id="check" class="btn active-btn">Habilitado</p>
+    
+      </div>
+
+      <div class="info-card">
+        <div class="info-item">
+          <span class="info-title">Grupo</span>
+          <span class="info-value">12-B</span>
+        </div>
+
+        <div class="info-item">
+          <span class="info-title">Lugar</span>
+          <span class="info-value">Aula 7</span>
+        </div>
+
+        <div class="info-item">
+          <span class="info-title">Espera</span>
+          <span class="info-value" id="time" ></span>
+        </div>
+      </div>
+
+      <ul class="details-list">
+        <li>Esta función enseña una escena épica de la película de Los Juegos del Hambre.</li>
+        <li>Un juego donde solo uno sobrevive.</li>
+        <li>Estrategia, traición y decisiones imposibles.</li>
+        <li>Porque perder… significa morir.</li>
+        <li>Instagram: <strong>oficial_capitolio</strong></li>
+      </ul>
+    </main>
+
+  </div>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+    import { getDatabase, ref, onValue, runTransaction, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+    
+    const firebaseConfig = {
+        apiKey: "AIzaSyCDy9QGkDlwi7TuDG6FHLpLlEb6ltSphUU",
+        authDomain: "citeatro-17dc6.firebaseapp.com",
+        databaseURL: "https://citeatro-17dc6-default-rtdb.firebaseio.com",
+        projectId: "citeatro-17dc6",
+        storageBucket: "citeatro-17dc6.firebasestorage.app",
+        messagingSenderId: "786823561013",
+        appId: "1:786823561013:web:841ad671c6c1b6c391167c",
+        measurementId: "G-W14G1KSXFT"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+    
+    // Hacer la función global
+  
+      const cls1Ref = ref(database, 'Class/cls1');
+      const count = ref(database, 'Coldown/cls1')
+      
+      onValue(cls1Ref, (snapshot) => {
+          const currentValue = snapshot.val();
+          if (currentValue !== null) {
+              console.log(`Valor actual de cls (en tiempo real): ${currentValue}`);
+              // Aquí puedes actualizar el DOM si quieres
+
+              if (currentValue){
+                document.getElementById('check').textContent = "Habilitada";
+              } else{
+                document.getElementById('check').textContent = "Deshabilitada";
+              }
+              
+          } else {
+              console.log("El nodo Class/cls1 no existe.");
+              document.getElementById('check').textContent = "No hay datos";
+          }
+      });
+
+      onValue(count,(snapshot) => {
+        const currentime = snapshot.val();
+        let segundosTotales = currentime * 60;
+
+        const timer = setInterval(() => {
+
+          if (currentime !== null){
+
+            
+            let min = Math.floor(segundosTotales / 60);
+            let seg = segundosTotales % 60;
+            let displaySegundos = seg < 10 ? '0' + seg : seg;
+
+            document.getElementById('time').textContent = `${min}:${displaySegundos}`;
+         
+          } else {
+
+              document.getElementById('time').textContent = "No hay datos";
+          }
+          if (segundosTotales <= 0) {
+
+              clearInterval(timer);
+              set(count, 0);
+              set(cls1Ref,true);
+              console.log("¡Tiempo finalizado!");
+          } else {
+              segundosTotales--;
+          }
+
+      });
+
+      });
+        const menu = document.getElementById("home");
+        menu.addEventListener('click', (e) => {
+      
+        window.location.href = "clases.html";
+        });
+
+
+
+    
+    console.log("Firebase inicializado correctamente");
+</script>
+</body>
+</html>
