@@ -17,6 +17,7 @@
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+
 body {
   font-family: "Poppins", sans-serif;
   background: #f1eeee;
@@ -25,7 +26,6 @@ body {
 .icono-libro {
   width: 30px;
   height: 30px;
-  color: #fff;
   flex-shrink: 0;
 }
 
@@ -38,16 +38,7 @@ body {
   min-height: 100vh;
   background: var(--bg);
 }
-.navbar {
-  background: #a22b1f;
-  color: white;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-}
+
 /* HEADER */
 .topbar {
   width: 100%;
@@ -72,6 +63,8 @@ body {
   position: absolute;
   left: 22px;
   font-size: 2.6rem;
+  background: none;
+  border: none;
 }
 
 /* HERO (COMPU IGUAL QUE ANTES) */
