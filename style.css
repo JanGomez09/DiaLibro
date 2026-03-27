@@ -38,7 +38,16 @@ body {
   min-height: 100vh;
   background: var(--bg);
 }
-
+.navbar {
+  background: #a22b1f;
+  color: white;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
 /* HEADER */
 .topbar {
   width: 100%;
