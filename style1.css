@@ -38,7 +38,7 @@ body {
 .topbar {
   width: 100%;
   min-height: 78px;
-  background: linear-gradient(135deg, var(--red-1), var(--red-2));
+  background: #a22b1f;
   color: white;
   display: flex;
   align-items: center;
