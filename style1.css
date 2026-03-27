@@ -35,6 +35,33 @@ body {
   color: white;
 }
 
+.topbar {
+  width: 100%;
+  min-height: 78px;
+  background: linear-gradient(135deg, var(--red-1), var(--red-2));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 16px 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.topbar h1 {
+  font-family: "Srisakdi", cursive;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.book-icon {
+  position: absolute;
+  left: 22px;
+  font-size: 2.6rem;
+  background: none;
+  border: none;
+}
+
 .titulo {
   font-family: 'Srisakdi', cursive;
   font-size: 34px;
