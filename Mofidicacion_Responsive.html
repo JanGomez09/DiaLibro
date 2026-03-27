@@ -197,20 +197,127 @@
  
       <div class="form-group">
         <label for="tiempo">Tiempo de espera de la función</label>
-        <input type="number" id="tiempo" name="tiempo" value="0" class="input-wide" />
+        <input type="number" id="time" name="tiempo" value="0" class="input-wide" />
       </div>
  
-      <button class="btn-modificar" onclick="modificar()">Modificar</button>
+      <button class="btn-modificar" onclick="toggleAndDisplayCls()" >Modificar</button>
     </div>
   </main>
  
-  <script>
-    function modificar() {
-      const estado = document.getElementById('estado').value;
-      const tiempo = document.getElementById('tiempo').value;
-      alert(`Datos guardados:\nEstado: ${estado}\nTiempo de espera: ${tiempo}`);
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+    import { getDatabase, ref, onValue, runTransaction, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+    
+    const firebaseConfig = {
+        apiKey: "AIzaSyCDy9QGkDlwi7TuDG6FHLpLlEb6ltSphUU",
+        authDomain: "citeatro-17dc6.firebaseapp.com",
+        databaseURL: "https://citeatro-17dc6-default-rtdb.firebaseio.com",
+        projectId: "citeatro-17dc6",
+        storageBucket: "citeatro-17dc6.firebasestorage.app",
+        messagingSenderId: "786823561013",
+        appId: "1:786823561013:web:841ad671c6c1b6c391167c",
+        measurementId: "G-W14G1KSXFT"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+    
+    console.log("Firebase inicializado correctamente");
+
+    // Hacer las funciones globales para que puedan ser usadas con onclick
+    window.listenForCls1Changes = function() {
+        const cls1Ref = ref(database, 'Class/cls1');
+        
+        onValue(cls1Ref, (snapshot) => {
+            const currentValue = snapshot.val();
+            if (currentValue !== null) {
+                console.log(`Valor actual de cls1 (en tiempo real): ${currentValue}`);
+                document.getElementById('check').textContent = currentValue;
+            } else {
+                console.log("El nodo Class/cls1 no existe.");
+                document.getElementById('check').textContent = "No hay datos";
+            }
+        });
+    };
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user);
+
+    // tiempo de clases
+window.toggleAndDisplayCls = async function () {
+    const time = parseFloat(document.getElementById("time").value);
+    const resultado = time;
+
+    // Mapa de usuarios → clave
+    const userMap = {
+        "_woneralizing_7A_.": "cls1",
+        "_drankkulcc_12A_.": "cls2",
+        "_alpolkamipz_10D_.": "cls3",
+        "_haznelgratel_7E_.": "cls4",
+        "_pretzelpanke_7C_.": "cls5",
+        "_dragonsmovie_11D_.": "cls6",
+        "_jugosambrientos_12B_.": "cls7",
+        "_gatsbingbigering_10E_.": "cls8",
+        "_gravewifetotalyded_8A_.": "cls9",
+        "_narnianiarniaana_12C_.": "cls10",
+        "_franklinsdaerias_11C_.": "cls12",
+        "_sheromlelocksgood_9D_.": "cls13",
+        "_punzaderapunzel_8C_.": "cls15",
+        "_maltildadaslam_8B_.": "cls16",
+        "_glorianamepidioun67_10C_.": "cls17",
+        "_spinosochos_7D_.": "cls18",
+        "_gulpingforrest_10B_.": "cls19",
+        "_heracklesjobing_11A_.": "lab1",
+        "_movilizeddick_11B_.": "lab4",
+        "_carolinanortheste_7B_.": "lab5",
+        "_aladdinmagicslamp_9A_.": "wok1",
+        "_losanillosdelseñor_9B_.": "wok2",
+        "_cruellacruelacruela_9C_.": "wok3",
+        "_pidrasfilosofalespotter_8F_.": "wok4",
+        "_jumanjimanjimanjumanji_9E_.": "wok6",
+        "_momialamiamomiasas_11E_.": "wok7",
+        "_elnormalmundodejacks_8D_.": "wok8",
+        "_elozomagozodeoz_8E_.": "wok9",
+        "_mazerunneringmaze_10A_.": "wok10"
+    };
+
+    const key = userMap[user];
+
+    if (!key) {
+        console.error("Usuario no reconocido");
+        return;
     }
-  </script>
+
+    try {
+        // -------- Guardar cooldown --------
+        const coldownRef = ref(database, `Coldown/${key}`);
+        await set(coldownRef, resultado);
+        console.log("Cooldown guardado correctamente");
+
+        // -------- Toggle de clase --------
+        const classRef = ref(database, `Class/${key}`);
+
+        const result = await runTransaction(classRef, (currentData) => {
+            if (currentData === null) return true;
+            return !currentData; // alterna true/false correctamente
+        });
+
+        if (result.committed) {
+            const newValue = result.snapshot.val();
+            console.log(`El valor de ${key} ha sido cambiado a: ${newValue}`);
+            document.getElementById('check').textContent = newValue;
+        } else {
+            console.log("La transacción no se confirmó");
+        }
+
+    } catch (error) {
+        
+    }
+};
+
+    
+</script>
  
 </body>
 </html>
