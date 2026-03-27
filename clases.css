@@ -21,6 +21,10 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+header{
+  
+}
+
 body {
   background: var(--crema);
   font-family: 'Crimson Pro', Georgia, serif;
