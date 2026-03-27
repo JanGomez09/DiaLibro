@@ -54,7 +54,7 @@ body {
   object-fit: cover;
 }
 
-/* Banner / Image slider */
+/* Banner / carrusel */
 .banner {
   position: relative;
   width: 100%;
@@ -100,7 +100,7 @@ body {
   right: 10px;
 }
 
-/* Section title */
+/* sección titulo */
 .section-title {
   padding: 16px 20px 8px;
   font-size: 18px;
@@ -108,7 +108,7 @@ body {
   color: #222222;
 }
 
-/* Menu buttons */
+/* Botones del menu */
 .menu {
   padding: 8px 20px 24px;
   display: flex;
