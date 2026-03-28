@@ -155,7 +155,7 @@ body {
 
 
 
-@media (min-width: 1024px) {
+@media (min-width: 434px) {
   .contenido {
     max-width: 960px;
     margin: 0 auto;
