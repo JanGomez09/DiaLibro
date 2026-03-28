@@ -152,7 +152,7 @@ body {
   gap: 10px;
   padding: 6px 14px 14px;
 }
-@media (min-width: 343px) {
+@media (min-width: 640px) {
   .lista-clases {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
