@@ -62,13 +62,13 @@ html {
 
 .topbar h1 {
   font-family: "Srisakdi", cursive;
-  font-size: 2.4rem;
+  font-size: clamp(1.25rem, 4.5vw, 2.4rem);
   font-weight: 700;
 }
 
 .book-icon {
   position: absolute;
-  left: 22px;
+  left: 12px;
   font-size: 2.6rem;
   background: none;
   border: none;
@@ -76,7 +76,7 @@ html {
 
 .titulo {
   font-family: 'Srisakdi', cursive;
-  font-size: 34px;
+  font-size: clamp(1.2rem, 4.2vw, 2.2rem);
 }
 
 body {
