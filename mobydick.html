@@ -109,36 +109,17 @@
           }
       });
 
-      onValue(count,(snapshot) => {
+     onValue(count,(snapshot) => {
         const currentime = snapshot.val();
-        let segundosTotales = currentime * 60;
+  
+        if (currentime == 0) {
+          set(cls1Ref,true);
+        }
+     
 
-        const timer = setInterval(() => {
-
-          if (currentime !== null){
-
-            
-            let min = Math.floor(segundosTotales / 60);
-            let seg = segundosTotales % 60;
-            let displaySegundos = seg < 10 ? '0' + seg : seg;
-
-            document.getElementById('time').textContent = `${min}:${displaySegundos}`;
+        document.getElementById('time').textContent = currentime + "min";
          
-          } else {
-
-              document.getElementById('time').textContent = "No hay datos";
-          }
-          if (segundosTotales <= 0) {
-
-              clearInterval(timer);
-              set(count, 0);
-              set(cls1Ref,true);
-              console.log("¡Tiempo finalizado!");
-          } else {
-              segundosTotales--;
-          }
-
-        });
+         
       });
 
       const menu = document.getElementById("home");
