@@ -233,10 +233,11 @@
     const user = JSON.parse(localStorage.getItem("user"));
     console.log(user);
 
-    // tiempo de clases
-window.toggleAndDisplayCls = async function () {
+    window.toggleAndDisplayCls = async function () {
+
+  
     const time = parseFloat(document.getElementById("time").value);
-    const resultado = time * 60;
+    if (time <= 0) return;
 
     // Mapa de usuarios → clave
     const userMap = {
@@ -281,15 +282,28 @@ window.toggleAndDisplayCls = async function () {
     try {
         // -------- Guardar cooldown --------
         const coldownRef = ref(database, `Coldown/${key}`);
-        await set(coldownRef, resultado);
-        console.log("Cooldown guardado correctamente");
+         // Iniciar temporizador en minutos
+        let remaining = time;
+        await set(coldownRef, remaining);
+
+        const intervalId = setInterval(async () => {
+            remaining--;
+            if (remaining <= 0) {
+                clearInterval(intervalId);
+                await set(coldownRef, 0);
+            } else {
+                await set(coldownRef, remaining);
+            }
+        }, 60000); // cada minuto
+
+        console.log("Temporizador de cooldown iniciado");
 
         // -------- Toggle de clase --------
         const classRef = ref(database, `Class/${key}`);
 
         const result = await runTransaction(classRef, (currentData) => {
             if (currentData === null) return true;
-            return !currentData; // alterna true/false correctamente
+            return false; // alterna true/false correctamente
         });
 
         if (result.committed) {
@@ -304,7 +318,12 @@ window.toggleAndDisplayCls = async function () {
         
     }
     
-};
+};// tiempo de clases
+
+
+
+
+    
 const menu = document.getElementById("home");
       menu.addEventListener('click', (e) => {
 
