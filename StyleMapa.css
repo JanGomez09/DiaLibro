@@ -25,7 +25,7 @@ body {
   width: 100%;
   min-height: 78px;
   background: #a22b1f;
-  color: white;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,6 +38,7 @@ body {
   font-family: "Srisakdi", cursive;
   font-size: clamp(1.25rem, 4.5vw, 2.4rem);
   font-weight: 700;
+    color: white;
 }
 
 .book-icon {
