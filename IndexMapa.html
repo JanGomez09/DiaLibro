@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagenes/LOPERIS.jpg">
+    <link rel="stylesheet" href="libroPRUEBA.css">
+    <script src="scriptLibPRUEBA.js" defer></script>
+    <title>Document</title>
+</head>
+
+<header class="Banner">
+    <section>
+        <div>
+            <h1>Mapa, Dia del Libro</h1>
+        </div>
+    </section>
+</header>
+
+<div class="main">
+    <svg class="plan" width="1020" height="1700" viewBox="0 0 900 1200" id="mainSvg">
+        <defs>
+            <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+                <circle cx="1" cy="1" r="0.8" fill="#44475a" />
+            </pattern>
+
+            <!-- LABS COLUMNA CENTRAL -->
+            <clipPath id="clip-t10">
+                <rect x="500" y="20" width="120" height="60" rx="5" />
+            </clipPath>
+            <clipPath id="clip-t9">
+                <rect x="500" y="88" width="120" height="75" rx="5" />
+            </clipPath>
+            <clipPath id="clip-t8">
+                <rect x="500" y="156" width="120" height="75" rx="5" />
+            </clipPath>
+            <clipPath id="clip-t7">
+                <rect x="500" y="224" width="120" height="75" rx="5" />
+            </clipPath>
+            <clipPath id="clip-t6">
+                <rect x="500" y="292" width="120" height="75" rx="5" />
+            </clipPath>
+            <clipPath id="clip-t5">
+                <rect x="500" y="360" width="120" height="75" rx="5" />
+            </clipPath>
+            <clipPath id="clip-t4">
+                <rect x="500" y="428" width="120" height="75" rx="5" />
+            </clipPath>
+            <clipPath id="clip-t3">
+                <rect x="500" y="496" width="120" height="75" rx="5" />
+            </clipPath>
+
+            <!-- LABS IZQUIERDA -->
+            <clipPath id="clip-t2">
+                <rect x="260" y="360" width="120" height="94" rx="5" />
+            </clipPath>
+            <clipPath id="clip-t1">
+                <rect x="260" y="462" width="120" height="94" rx="5" />
+            </clipPath>
+
+            <!-- PABELLÓN A -->
+            <clipPath id="clip-a1">
+                <rect x="60" y="600" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-a2">
+                <rect x="60" y="688" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-a3">
+                <rect x="60" y="776" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-a4">
+                <rect x="60" y="864" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-a5">
+                <rect x="60" y="952" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-a6">
+                <rect x="60" y="1040" width="120" height="80" rx="5" />
+            </clipPath>
+
+            <!-- PABELLÓN B -->
+            <clipPath id="clip-b1">
+                <rect x="260" y="600" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-b2">
+                <rect x="260" y="688" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-b3">
+                <rect x="260" y="776" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-b4">
+                <rect x="260" y="864" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-b5">
+                <rect x="260" y="952" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-b6">
+                <rect x="260" y="1040" width="120" height="80" rx="5" />
+            </clipPath>
+
+            <!-- PABELLÓN C -->
+            <clipPath id="clip-c1">
+                <rect x="450" y="600" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-c2">
+                <rect x="450" y="688" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-c3">
+                <rect x="450" y="776" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-c4">
+                <rect x="450" y="864" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-c5">
+                <rect x="450" y="952" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-c6">
+                <rect x="450" y="1040" width="120" height="80" rx="5" />
+            </clipPath>
+
+            <!-- PABELLÓN D -->
+            <clipPath id="clip-d1">
+                <rect x="660" y="600" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-d2">
+                <rect x="660" y="688" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-d3">
+                <rect x="660" y="776" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-d4">
+                <rect x="660" y="864" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-d5">
+                <rect x="660" y="952" width="120" height="80" rx="5" />
+            </clipPath>
+            <clipPath id="clip-d6">
+                <rect x="660" y="1040" width="120" height="80" rx="5" />
+            </clipPath>
+        </defs>
+
+        <!-- Fondo punteado que encierra todo el mapa -->
+        <rect x="10" y="10" width="890" height="1170" fill="url(#dots)" stroke="#347deb" stroke-width="1.5" rx="16" />
+
+        <!-- ===== LABS COLUMNA CENTRAL (x=500) ===== -->
+        <g class="room" data-name="Taller 10" data-type="lab" data-desc="Taller 10" onclick="selectRoom(this)">
+            <rect x="500" y="20" width="120" height="60" fill="transparent" stroke="#347deb" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/Taller10.png" x="500" y="20" width="120" height="60"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-t10)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Taller 10" data-type="lab"></title>
+                </a>
+        </g>
+
+        <g class="room" data-name="Taller 9" data-type="lab" data-desc="Taller 9" onclick="selectRoom(this)">
+            <rect x="500" y="88" width="120" height="60" fill="transparent" stroke="#347deb" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/taller9.png" x="500" y="88" width="120" height="60"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-t9)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Taller 9" data-type="lab"></title>
+                </a>
+        </g>
+
+        <g class="room" data-name="Taller 8" data-type="lab" data-desc="Taller 8" onclick="selectRoom(this)">
+            <rect x="500" y="156" width="120" height="60" fill="transparent" stroke="#347deb" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/taller8.png" x="500" y="156" width="120" height="60"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-t8)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Taller 8" data-type="lab"></title>
+                </a>
+        </g>
+
+        <g class="room" data-name="Taller 7" data-type="lab" data-desc="Taller 7" onclick="selectRoom(this)">
+            <rect x="500" y="224" width="120" height="60" fill="transparent" stroke="#347deb" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/taller7.png" x="500" y="224" width="120" height="60"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-t7)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Taller 7" data-type="lab"></title>
+                </a>
+        </g>
+
+        <g class="room" data-name="Taller 6" data-type="lab" data-desc="Taller 6" onclick="selectRoom(this)">
+            <rect x="500" y="292" width="120" height="60" fill="transparent" stroke="#347deb" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/taller6.png" x="500" y="292" width="120" height="60"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-t6)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Taller 6" data-type="lab"></title>
+                </a>
+        </g>
+
+        <!--NO SE USA-->
+        <g class="room" data-name="Taller 5" data-type="admin" data-desc="No hay funcion, talvez el otro año 👀"
+            onclick="selectRoom(this)">
+            <rect x="500" y="360" width="120" height="60" fill="#111" stroke="#333" stroke-width="1.5" rx="5" />
+            <text x="560" y="386" text-anchor="middle" fill="#555" font-size="9" font-family="sans-serif">No hay funcion</text>
+            <text x="560" y="402" text-anchor="middle" fill="#555" font-size="9" font-family="sans-serif">talvez el otro año
+                👀</text>
+        </g>
+        <!------------------->
+
+        <g class="room" data-name="Taller 4" data-type="lab" data-desc="Taller 4" onclick="selectRoom(this)">
+            <rect x="500" y="428" width="120" height="60" fill="transparent" stroke="#347deb" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/taller4.png" x="500" y="428" width="120" height="60"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-t4)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Taller 4" data-type="lab"></title>
+                </a>
+        </g>
+
+        <g class="room" data-name="Taller 3" data-type="lab" data-desc="Taller 3" onclick="selectRoom(this)">
+            <rect x="500" y="496" width="120" height="60" fill="transparent" stroke="#347deb" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/taller3.png" x="500" y="496" width="120" height="60"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-t3)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Taller 3" data-type="lab"></title>
+                </a>
+        </g>
+
+        <!-- ===== LABS IZQUIERDA (x=260, más altos) ===== -->
+        <g class="room" data-name="Taller 2" data-type="lab" data-desc="Taller 2" onclick="selectRoom(this)">
+            <rect x="260" y="360" width="120" height="94" fill="transparent" stroke="#347deb" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/taller2.png" x="260" y="360" width="120" height="94"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-t2)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Taller 2" data-type="lab"></title>
+                </a>
+        </g>
+
+        <g class="room" data-name="Taller 1" data-type="lab" data-desc="Taller 1" onclick="selectRoom(this)">
+            <rect x="260" y="462" width="120" height="94" fill="transparent" stroke="#347deb" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/taller1.png" x="260" y="462" width="120" height="94"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-t1)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Taller 1" data-type="lab"></title>
+                </a>
+        </g>
+
+
+        <!-- ===== PABELLÓN A — Aula #1 al #6 (x=60) ===== -->
+        <g class="room" data-name="Aula #1" data-type="aula" data-desc="Aula #1" onclick="selectRoom(this)">
+            <rect x="60" y="600" width="120" height="80" fill="transparent" 
+                rx="5" />
+            <image href="imagenes/Aula1.png" x="60" y="600" width="120" height="80" preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#clip-a1)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #1" data-type="aula"></title>
+                </a>
+        </g>
+        <g class="room" data-name="Aula #2" data-type="aula" data-desc="Aula #2" onclick="selectRoom(this)">
+            <rect x="60" y="688" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/aula2.png" x="60" y="688" width="120" height="80" preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#clip-a2)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #2" data-type="aula"></title>
+                </a>
+        </g>
+        <g class="room" data-name="Aula #3" data-type="aula" data-desc="Aula #3" onclick="selectRoom(this)">
+            <rect x="60" y="776" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/aula3.png" x="60" y="776" width="120" height="80" preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#clip-a3)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #3" data-type="aula"></title>
+                </a>
+        </g>
+        <g class="room" data-name="Aula #4" data-type="aula" data-desc="Aula #4" onclick="selectRoom(this)">
+            <rect x="60" y="864" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/aula4.png" x="60" y="864" width="120" height="80" preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#clip-a4)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #4" data-type="aula"></title>
+                </a>
+        </g>
+        <g class="room" data-name="Aula #5" data-type="aula" data-desc="Aula #5" onclick="selectRoom(this)">
+            <rect x="60" y="952" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/aula5.png" x="60" y="952" width="120" height="80" preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#clip-a5)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #5" data-type="aula"></title>
+                </a>
+        </g>
+        <g class="room" data-name="Aula #6" data-type="aula" data-desc="Aula #6" onclick="selectRoom(this)">
+            <rect x="60" y="1040" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/aula6.png" x="60" y="1040" width="120" height="80"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-a6)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #6" data-type="aula"></title>
+                </a>
+        </g>
+
+        <!-- ===== PABELLÓN B — Lab5,4,3,Idiomas,1,Aula19 (x=260) ===== -->
+        <g class="room" data-name="Lab. 5" data-type="lab" data-desc="Lab. 5" onclick="selectRoom(this)">
+            <rect x="260" y="600" width="120" height="80" fill="transparent" stroke="#347deb" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/lab5.png" x="260" y="600" width="120" height="80" preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#clip-b1)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Lab. 5" data-type="lab"></title>
+                </a>
+        </g>
+        <g class="room" data-name="Lab. 4" data-type="lab" data-desc="Lab. 4" onclick="selectRoom(this)">
+            <rect x="260" y="688" width="120" height="80" fill="transparent" stroke="#347deb" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/lab4.png" x="260" y="688" width="120" height="80" preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#clip-b2)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Lab. 4" data-type="lab"></title>
+                </a>
+        </g>
+
+        <!--NO SE USA-->
+        <g class="room" data-name="Lab. 3" data-type="admin" data-desc="No hay funcion, talvez el otro año 👀"
+            onclick="selectRoom(this)">
+            <rect x="260" y="776" width="120" height="80" fill="#111" stroke="#333" stroke-width="1.5" rx="5" />
+            <text x="320" y="810" text-anchor="middle" fill="#555" font-size="9" font-family="sans-serif">No hay
+                funcion</text>
+            <text x="320" y="824" text-anchor="middle" fill="#555" font-size="9" font-family="sans-serif">tal vez el otro
+                año 👀</text>
+        </g>
+        <g class="room" data-name="Lab. Idiomas" data-type="admin" data-desc="No hay funcion, talvez el otro año 👀"
+            onclick="selectRoom(this)">
+            <rect x="260" y="864" width="120" height="80" fill="#111" stroke="#333" stroke-width="1.5" rx="5" />
+            <text x="320" y="898" text-anchor="middle" fill="#555" font-size="9" font-family="sans-serif">No hay
+                funcion</text>
+            <text x="320" y="912" text-anchor="middle" fill="#555" font-size="9" font-family="sans-serif">tal vez el otro
+                año 👀</text>
+        </g>
+        <!---------------->
+
+        <g class="room" data-name="Lab. 1" data-type="lab" data-desc="Lab. 1" onclick="selectRoom(this)">
+            <rect x="260" y="952" width="120" height="80" fill="transparent" stroke="#347deb" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/lab1.png" x="260" y="952" width="120" height="80" preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#clip-b5)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Lab. 1" data-type="lab"></title>
+                </a>
+        </g>
+        <g class="room" data-name="Aula #19" data-type="aula" data-desc="Aula #19" onclick="selectRoom(this)">
+            <rect x="260" y="1040" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/Aula 19.png" x="260" y="1040" width="120" height="80"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-b6)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #19" data-type="aula"></title>
+                </a>
+        </g>
+
+        <!-- ===== PABELLÓN C — Aula #12 al #7 (x=450) ===== -->
+        <g class="room" data-name="Aula #12" data-type="aula" data-desc="Aula #12" onclick="selectRoom(this)">
+            <rect x="450" y="600" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/Aula 12.png" x="450" y="600" width="120" height="80"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-c1)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #12" data-type="aula"></title>
+                </a>
+        </g>
+
+        <!-- NO SE USA-->
+        <g class="room" data-name="Aula #11" data-type="admin" data-desc="No hay funcion, talvez el otro año 👀"
+            onclick="selectRoom(this)">
+            <rect x="450" y="688" width="120" height="80" fill="#111" stroke="#333" stroke-width="1.5" rx="5" />
+            <text x="510" y="722" text-anchor="middle" fill="#555" font-size="9" font-family="sans-serif">No hay funcion</text>
+            <text x="510" y="736" text-anchor="middle" fill="#555" font-size="9" font-family="sans-serif">talvez el otro año
+                👀</text>
+        </g>
+        <!------------------>
+        <g class="room" data-name="Aula #10" data-type="aula" data-desc="Aula #10" onclick="selectRoom(this)">
+            <rect x="450" y="776" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/Aula10.png" x="450" y="776" width="120" height="80"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-c3)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #10" data-type="aula"></title>
+                </a>
+        </g>
+        <g class="room" data-name="Aula #9" data-type="aula" data-desc="Aula #9" onclick="selectRoom(this)">
+            <rect x="450" y="864" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/aula9.png" x="450" y="864" width="120" height="80"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-c4)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #9" data-type="aula"></title>
+                </a>
+        </g>
+        <g class="room" data-name="Aula #8" data-type="aula" data-desc="Aula #8" onclick="selectRoom(this)">
+            <rect x="450" y="952" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/Aula8.png" x="450" y="952" width="120" height="80"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-c5)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #8" data-type="aula"></title>
+                </a>
+        </g>
+        <g class="room" data-name="Aula #7" data-type="aula" data-desc="Aula #7" onclick="selectRoom(this)">
+            <rect x="450" y="1040" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/aula7.png" x="450" y="1040" width="120" height="80"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-c6)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #7" data-type="aula"></title>
+                </a>
+        </g>
+
+        <!-- ===== PABELLÓN D — Aula #18 al #13 (x=660) ===== -->
+        <g class="room" data-name="Aula #18" data-type="aula" data-desc="Aula #18" onclick="selectRoom(this)">
+            <rect x="660" y="600" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/aula18.png" x="660" y="600" width="120" height="80"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-d1)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #18" data-type="aula"></title>
+                </a>
+        </g>
+
+        <g class="room" data-name="Aula #17" data-type="aula" data-desc="Aula #17" onclick="selectRoom(this)">
+            <rect x="660" y="688" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/aula17.png" x="660" y="688" width="120" height="80"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-d2)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #17" data-type="aula"></title>
+                </a>
+        </g>
+
+        <g class="room" data-name="Aula #16" data-type="aula" data-desc="Aula #16" onclick="selectRoom(this)">
+            <rect x="660" y="776" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/fotos.png" x="660" y="776" width="120" height="80"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-d3)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #16" data-type="aula"></title>
+                </a>
+        </g>
+
+        <g class="room" data-name="Aula #15" data-type="aula" data-desc="Aula #15" onclick="selectRoom(this)">
+            <rect x="660" y="864" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/aula15.png" x="660" y="864" width="120" height="80"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-d4)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #15" data-type="aula"></title>
+                </a>
+        </g>
+
+        <!-- NO SE USA-->
+        <g class="room" data-name="Aula #14" data-type="admin" data-desc="No hay funcion, talvez el otro año 👀"
+            onclick="selectRoom(this)">
+            <rect x="660" y="952" width="120" height="80" fill="#111" stroke="#333" stroke-width="1.5" rx="5" />
+            <text x="720" y="986" text-anchor="middle" fill="#555" font-size="9" font-family="sans-serif">No hay funcion</text>
+            <text x="720" y="1000" text-anchor="middle" fill="#555" font-size="9" font-family="sans-serif">talvez el otro año
+                👀</text>
+        </g>
+        <!------------------>
+        
+        <g class="room" data-name="Aula #13" data-type="aula" data-desc="Aula #13" onclick="selectRoom(this)">
+            <rect x="660" y="1040" width="120" height="80" fill="transparent" stroke="#a78bfa" stroke-width="1.5"
+                rx="5" />
+            <image href="imagenes/Aula13.png" x="660" y="1040" width="120" height="80"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-d6)" />
+                <a xlink:href="#" target="_blank" class="room-link">
+                    <title data-name="Aula #13" data-type="aula"></title>
+                </a>
+        </g>
+
+    </svg>
+</div>
+
+<div class="tooltip" id="tt">
+    <div class="tt-name" id="ttName"></div>
+    <div class="tt-type" id="ttType"></div>
+</div>
+
+<body></body>
+
+</html>
