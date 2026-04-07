@@ -186,14 +186,18 @@ footer{
 
 @media (max-width:480px){
     
-    .topbar h1{
-        font-size:1.3rem;
-    }
+    .topbar{
+    padding:12px;
+  }
 
-    .book-icon img{
-        width:24px;
-        height:24px;
-    }
+  .topbar h1{
+    font-size:1.3rem;
+  }
+
+  .book-icon img{
+    width:24px;
+    height:24px;
+  }
     .main{
         padding:12px;
     }
