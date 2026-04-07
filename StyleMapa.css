@@ -1,4 +1,4 @@
-/* ===== MAPA ÉPICO COMPLETO - REEMPLAZA TU CSS ===== */
+
 * {
     margin: 0;
     padding: 0;
@@ -123,7 +123,7 @@ svg.plan {
     border-radius: 8px;
 }
 
-/* HOVER MAGIA */
+/* HOVER */
 .room:hover {
     transform: translateY(-8px) scale(1.03);
     z-index: 20;
