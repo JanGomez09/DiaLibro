@@ -4,45 +4,33 @@ body{
     background:#ffffff;
     font-family:"Ubuntu", sans-serif;
 }
-.topbar{
-  width:100%;
-  min-height:78px;
-  background:linear-gradient(135deg,#8f231b,#b33024);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  padding:16px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.12);
+
+.topbar {
+  width: 100%;
+  min-height: 78px;
+  background: #a22b1f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 16px 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
-
-
-
-.book-icon{
-  background:none;
-  border:none;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-right:auto;
+.topbar h1 {
+  font-family: "Srisakdi", cursive;
+  font-size: clamp(1.25rem, 4.5vw, 2.4rem);
+  font-weight: 700;
 }
 
-.book-icon img{
-  width:32px;
-  height:32px;
+.book-icon {
+  position: absolute;
+  left: 22px;
+  font-size: 2.6rem;
+  background: none;
+  border: none;
 }
-
-
-.topbar h1{
-  font-family:"Srisakdi", cursive;
-  font-size:2rem;
-  margin:0 auto;
-  text-align:center;
-}
-
 
 @media (max-width:600px){
   .topbar h1{
