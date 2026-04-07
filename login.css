@@ -67,7 +67,7 @@ body{
     justify-content:center;
     gap:30px;
     flex-wrap:wrap;
-    width:100%;
+    width:90%;
     max-width:1000px;
 }
 
@@ -102,6 +102,7 @@ input{
     border:none;
     box-shadow:0px 4px 8px rgba(0,0,0,0.2);
     font-size:1em;
+    width: 25%;
 }
 
 /* BOTÓN */
@@ -186,18 +187,20 @@ footer{
 
 @media (max-width:480px){
     
+    
     .topbar{
-    padding:12px;
-  }
+        padding:12px;
+    }
 
-  .topbar h1{
-    font-size:1.3rem;
-  }
+    .topbar h1{
+        
+        font-size:1.3rem;
+    }
 
-  .book-icon img{
-    width:24px;
-    height:24px;
-  }
+    .book-icon img{
+        width:24px;
+        height:24px;
+    }
     .main{
         padding:12px;
     }
@@ -210,6 +213,7 @@ footer{
     input{
         padding:11px;
         font-size:0.95em;
+        width: 80%;
     }
 
 }
