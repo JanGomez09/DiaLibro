@@ -148,9 +148,13 @@ footer{
 
 /* RESPONSIVE MOVIL */
 @media (max-width:768px){
-
     .topbar h1{
         font-size:1.6rem;
+      }
+    
+      .book-icon img{
+        width:28px;
+        height:28px;
       }
 
     .contenedor{
