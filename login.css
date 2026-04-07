@@ -4,8 +4,6 @@ body{
     background:#ffffff;
     font-family:"Ubuntu", sans-serif;
 }
-
-/* TOPBAR */
 .topbar{
   width:100%;
   min-height:78px;
@@ -19,24 +17,42 @@ body{
   box-shadow:0 4px 14px rgba(0,0,0,0.12);
 }
 
-.topbar h1{
-  font-family:"Srisakdi", cursive;
-  font-size:2rem;
-  margin:0;
-  text-align:center;
-}
+
+
 
 .book-icon{
-  position:absolute;
-  left:15px;
   background:none;
   border:none;
   cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-right:auto;
 }
 
 .book-icon img{
   width:32px;
   height:32px;
+}
+
+
+.topbar h1{
+  font-family:"Srisakdi", cursive;
+  font-size:2rem;
+  margin:0 auto;
+  text-align:center;
+}
+
+
+@media (max-width:600px){
+  .topbar h1{
+    font-size:1.4rem;
+  }
+
+  .book-icon img{
+    width:26px;
+    height:26px;
+  }
 }
 
 /* CONTENIDO GENERAL */
@@ -134,8 +150,8 @@ footer{
 @media (max-width:768px){
 
     .topbar h1{
-        font-size:1.4rem;
-    }
+        font-size:1.6rem;
+      }
 
     .contenedor{
         gap:20px;
@@ -165,7 +181,15 @@ footer{
 }
 
 @media (max-width:480px){
+    
+    .topbar h1{
+        font-size:1.3rem;
+    }
 
+    .book-icon img{
+        width:24px;
+        height:24px;
+    }
     .main{
         padding:12px;
     }
