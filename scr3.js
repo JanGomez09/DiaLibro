@@ -36,7 +36,11 @@ const users = {
     wsh10: "_mazerunneringmaze_10A_.",
 }
 
+ const menu = document.getElementById("home");
+  menu.addEventListener('click', (e) => {
 
+    window.location.href = "index.html";
+  });
 
 function logIn(){
     let user = document.getElementById("name").value; 
