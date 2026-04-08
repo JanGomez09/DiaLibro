@@ -35,7 +35,7 @@
       <h2>Alicia en el País de las Maravillas</h2>
 
       <!-- 🔥 BOTONES NUEVOS -->
-      <div class="status-buttons">
+      <div id="BG" class="status-buttons">
         <p id="check" class="btn active-btn">Libre</p>
     
       </div>
@@ -99,10 +99,10 @@
 
               if (currentValue){
                 document.getElementById('check').textContent = "Libre";
-                document.getElementById('check').style.backgroundColor = "green";
+                document.getElementById('BG').style.backgroundColor = "green";
               } else{
                 document.getElementById('check').textContent = "En funcion";
-                document.getElementById('check').style.backgroundColor = "red";
+                document.getElementById('BG').style.backgroundColor = "red";
               }
               
           } else {
