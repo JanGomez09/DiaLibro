@@ -140,12 +140,20 @@ h2 {
 .active-btn {
   background: linear-gradient(135deg, var(--green-1), var(--green-2));
   color: white;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
 /* ROJO */
 .disabled-btn {
   background: linear-gradient(135deg, var(--red-1), var(--red-2));
   color: white;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
 /* CARD INFO */
