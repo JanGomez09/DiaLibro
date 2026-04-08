@@ -101,9 +101,11 @@
               // Aquí puedes actualizar el DOM si quieres
 
               if (currentValue){
-                document.getElementById('check').textContent = "Habilitada";
+                document.getElementById('check').textContent = "Libre";
+                document.getElementById('check').classList.add('active-btn');
               } else{
-                document.getElementById('check').textContent = "Deshabilitada";
+                document.getElementById('check').textContent = "En funcion";
+                document.getElementById('check').classList.add('disabled-btn');
               }
               
           } else {
