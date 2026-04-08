@@ -1,5 +1,4 @@
 // pagina de login
-
 const users = {
     cls1: "_woneralizing_7A_.",
     cls2: "_drankkulcc_12A_.",
@@ -22,7 +21,7 @@ const users = {
     cls13: "_sheromlelocksgood_9D_.",
     cls15: "_punzaderapunzel_8C_.",
     cls16: "_maltildadaslam_8B_.",
-    cls17: "_glorianamepidioun67_10C_.",
+    cls17: "_nieveciedad_10C_.",
     cls18: "_spinosochos_7D_.",
     //area tecnica
     wsh1: "_aladdinmagicslamp_9A_.",
