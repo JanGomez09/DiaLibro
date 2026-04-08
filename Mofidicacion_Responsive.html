@@ -176,11 +176,10 @@
     <div class="card">
       <h1 id="page-title" class="page-title">Modificar Datos de </h1>
  
-      <!-- Imagen de la función -->
+       <!-- Imagen de la función -->
       <div class="img-wrapper">
-        <p class="img-placeholder">📷 Imagen de la función<br><small>Reemplaza src con tu imagen</small></p>
-        <!-- Para usar tu imagen, descomenta la línea de abajo y pon la URL: -->
-        <!-- <img src="URL_DE_TU_IMAGEN" alt="Imagen de la función" /> -->
+        <img id="book" src="libro.png" width="100%" height="100%" alt="Imagen de la función" />
+        
       </div>
  
       <!-- Formulario -->
@@ -198,9 +197,6 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
     import { getDatabase, ref, onValue, runTransaction, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-
-
-    
     
     const firebaseConfig = {
         apiKey: "AIzaSyCDy9QGkDlwi7TuDG6FHLpLlEb6ltSphUU",
@@ -239,93 +235,123 @@
     switch(user){
       case "_woneralizing_7A_.":
         document.getElementById('page').textContent += " Alicia en el País de las Maravillas";
+        document.getElementById('book').src = "alicia.jpg";
         break;
       case "_drankkulcc_12A_.":
         document.getElementById('page-title').textContent += " Dracula";
+        document.getElementById('book').src = "dracula.jpg";
         break;
       case "_alpolkamipz_10D_.":
         document.getElementById('page-title').textContent += " Apokalipsis Z";
+        document.getElementById('book').src = "apokalipsis.jpg";
         break;
       case "_haznelgratel_7E_.":
         document.getElementById('page-title').textContent += " Hanzel & Gratel";
+        document.getElementById('book').src = "hanzel.jpg";
         break;
       case "_pretzelpanke_7C_.":
         document.getElementById('page-title').textContent += " Peter Pan";
+        document.getElementById('book').src = "peterpan.jpg";
         break;
       case "_dragonsmovie_11D_.":
         document.getElementById('page-title').textContent += " Como Entrenar a tu Dragón";
+        document.getElementById('book').src = "dragon.jpg";
         break;
       case "_jugosambrientos_12B_.":
         document.getElementById('page-title').textContent += " Los Juegos del Hambre";
+        document.getElementById('book').src = "hambre.jpg";
         break;
       case "_gatsbingbigering_10E_.":
         document.getElementById('page-title').textContent += " El Gran Gatsby";  
+        document.getElementById('book').src = "gatsby.jpg";
         break;
       case "_gravewifetotalyded_8A_.":
         document.getElementById('page-title').textContent += " El Cadaver de la Novia";
+          document.getElementById('book').src = "cadaver.jpg";
         break;
       case "_narnianiarniaana_12C_.":
         document.getElementById('page-title').textContent += " Las Crónicas de Narnia";
+        document.getElementById('book').src = "narnia.jpg";
         break;
       case "_franklinsdaerias_11C_.":
         document.getElementById('page-title').textContent += " El Diario de Ana Frank";
+        document.getElementById('book').src = "anafrank.jpg";
         break;
       case "_sheromlelocksgood_9D_.":
         document.getElementById('page-title').textContent += " Sherlock Holmes";
-        break;  
+        document.getElementById('book').src = "sherlock.jpg";
+        break;
       case "_punzaderapunzel_8C_.":
         document.getElementById('page-title').textContent += " Rapunzel";
+        document.getElementById('book').src = "rapunzel.png";
         break;
       case "_maltildadaslam_8B_.":
         document.getElementById('page-title').textContent += " Matilda";
+        document.getElementById('book').src = "matilda.jpg";
         break;
       case "_nieveciedad_10C_.": 
         document.getElementById('page-title').textContent += " La Sociedad de la Nieve";
+        document.getElementById('book').src = "nieve.jpg";
         break;
       case "_spinosochos_7D_.":
         document.getElementById('page-title').textContent += " Pinocho";
+        document.getElementById('book').src = "pinocho.jpg";
         break;
       case "_gulpingforrest_10B_.":
         document.getElementById('page-title').textContent += " Forrest Gump";
+        document.getElementById('book').src = "forrest.jpg";
         break;
       case "_heracklesjobing_11A_.":
         document.getElementById('page-title').textContent += " Los Trabajos de Heracles";
+        document.getElementById('book').src = "heracles.jpg";
         break;
       case "_movilizeddick_11B_.":
         document.getElementById('page-title').textContent += " Moby Dick";
+        document.getElementById('book').src = "mobydick.jpg";
         break;
       case "_carolinanortheste_7B_.":
         document.getElementById('page').textContent += " Carolina";
+        document.getElementById('book').src = "coraline.jpg";
         break;
       case "_aladdinmagicslamp_9A_.":
         document.getElementById('page-title').textContent += " Aladdin y la lámpara mágica";
+        document.getElementById('book').src = "aladdin.jpg";
         break;
       case "_losanillosdelseñor_9B_.":
         document.getElementById('page-title').textContent += " El Señor de los Anillos";
+        document.getElementById('book').src = "anillos.jpg";
         break;
       case "_cruellacruelacruela_9C_.":
         document.getElementById('page-title').textContent += " Cruella";
+        document.getElementById('book').src = "cruella.jpg";
         break;
       case "_pidrasfilosofalespotter_8F_.":
         document.getElementById('page-title').textContent += " Harry Potter y la Piedra Filosofal";
+        document.getElementById('book').src = "harry.jpeg";
         break;
       case "_jumanjimanjimanjumanji_9E_.":
         document.getElementById('page-title').textContent += " Jumanji";
+        document.getElementById('book').src = "jumanji.jpg";
         break;
       case "_momialamiamomiasas_11E_.":
         document.getElementById('page-title').textContent += " La Momia";
+        document.getElementById('book').src = "momia.jpg";
         break;
       case "_elnormalmundodejacks_8D_.":
         document.getElementById('page-title').textContent += " El Extraño Mundo de Jack";
+        document.getElementById('book').src = "jack.jpg";
         break;
       case "_elozomagozodeoz_8E_.":
         document.getElementById('page-title').textContent += " El Mago de Oz";
+        document.getElementById('book').src = "oz.jpg";
         break;
       case "_mazerunneringmaze_10A_.":
         document.getElementById('page-title').textContent += " Maze Runner";
+        document.getElementById('book').src = "mazerunner.jpg";
         break;
 
     }
+
 
 
     window.toggleAndDisplayCls = async function () {
